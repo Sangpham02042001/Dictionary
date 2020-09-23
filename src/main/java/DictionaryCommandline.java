@@ -33,7 +33,7 @@ public class DictionaryCommandline {
     /**
      *
      */
-    public void dictionaryAdvanced() {
+    public static void dictionaryAdvanced() {
         DictionaryManagement.insertFromFile();
         showAllWords();
         DictionaryManagement.dictionaryLookup();
@@ -45,9 +45,10 @@ public class DictionaryCommandline {
      */
     public static void main(String[] args) {
         Dictionary dictionary = new Dictionary();
-        DictionaryManagement.insertFromFile();
-        showAllWords();
-        DictionaryManagement.dictionaryLookup();
+        dictionaryAdvanced();
+        DictionaryManagement.dictionaryExporToFile();
+        DictionaryManagement.deleteFromCommandLine();
+//        showAllWords();
     }
 
 }
