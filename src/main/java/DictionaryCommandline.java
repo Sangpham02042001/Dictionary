@@ -30,12 +30,24 @@ public class DictionaryCommandline {
         showAllWords();
     }
 
-    public static void main(String[] args) {
-        Dictionary dictionary = new Dictionary();
-//        DictionaryManagement.insertFromCommandline();
+    /**
+     *
+     */
+    public void dictionaryAdvanced() {
         DictionaryManagement.insertFromFile();
         showAllWords();
+        DictionaryManagement.dictionaryLookup();
+    }
 
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        Dictionary dictionary = new Dictionary();
+        DictionaryManagement.insertFromFile();
+        showAllWords();
+        DictionaryManagement.dictionaryLookup();
     }
 
 }
