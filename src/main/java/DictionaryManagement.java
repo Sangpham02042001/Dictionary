@@ -8,6 +8,7 @@ import java.util.*;
 
 public class DictionaryManagement {
     public static ArrayList<Integer> indexWordLookUp = new ArrayList<Integer>();
+
     /**
      * Insert from command line.
      */
@@ -25,6 +26,24 @@ public class DictionaryManagement {
         }
     }
 
+    public static void alterFromCommandLine() {
+        Scanner sc = new Scanner(System.in);
+        dictionaryLookup();
+
+        System.out.print("Nhập index từ cần sửa:  ");
+        int indexsString = sc.nextInt();
+
+        System.out.print("English - VietNamesse:  ");
+        String engAlter = sc.next();
+        String vieAlter = sc.nextLine();
+
+        Dictionary.words.get(indexWordLookUp.get(indexsString).intValue() - 1).setWord_target(engAlter);
+        Dictionary.words.get(indexWordLookUp.get(indexsString).intValue() - 1).setWord_explain(vieAlter);
+        System.out.println("Changed successfully!");
+        dictionaryExporToFile();
+
+    }
+
     public static void deleteFromCommandLine() {
         Scanner sc = new Scanner(System.in);
         dictionaryLookup();
@@ -36,9 +55,9 @@ public class DictionaryManagement {
 
         for (int i = 0; i < array.length; i++) {
             int indexToDelete = Integer.parseInt(String.valueOf(array[i]));
-//            System.out.println(indexToDelete + " " + indexWordLookUp.get(indexToDelete - 1));
-            Dictionary.words.remove(indexWordLookUp.get(indexToDelete - 1));
+            Dictionary.words.remove(indexWordLookUp.get(indexToDelete - 1).intValue());
         }
+        System.out.println("Deleted successfully!");
         dictionaryExporToFile();
     }
 

@@ -1,6 +1,7 @@
 import sun.java2d.windows.GDIWindowSurfaceData;
 
 import javax.swing.tree.DefaultTreeCellEditor;
+import java.io.DataInput;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.lang.String;
@@ -47,8 +48,8 @@ public class DictionaryCommandline {
         Dictionary dictionary = new Dictionary();
         dictionaryAdvanced();
         DictionaryManagement.dictionaryExporToFile();
-        DictionaryManagement.deleteFromCommandLine();
-//        showAllWords();
+        DictionaryManagement.alterFromCommandLine();
+//        DictionaryManagement.deleteFromCommandLine();
     }
 
 }
