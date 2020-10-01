@@ -1,0 +1,3 @@
+drink   uống
+draw   vẽ
+hello   xin chào
